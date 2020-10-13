@@ -19,6 +19,7 @@ exports.bicicleta_creaete_post = function(req, res){
 exports.bicicleta_update_get = function(req, res){
 	var bici = Bicicleta.findById(req.params.id);
 
+	
 	res.render('bicicletas/update', {bici});
 }
 
@@ -30,8 +31,16 @@ exports.bicicleta_update_post = function(req, res){
 	bici.ubicacion = [req.body.lat, req.body.lng];
 
 	res.redirect('/bicicletas');
+	console.log('hola');
 }
-exports.bicicleta_show_post = function (req, res) {
+exports.bicicleta_show_get = function(req, res){
+	var bici = Bicicleta.findById(req.params.id);
+
+	res.render('bicicletas/show', {bici});
+
+	alert('hola')
+}
+exports.bicicleta_show_post = function(req, res){
 	var bici = Bicicleta.findById(req.params.id);
 	bici.id = req.body.id;
 	bici.color = req.body.color;

@@ -1,19 +1,18 @@
 extends ../layout
 
 block content
-
-   a(href='/bicicletas') Volver
-
-  br
-  br
-  br
-
-  h1 Mostrando Bicicleta
+  a(href='/bicicletas') Volver
 
   br
   br
+  br
 
-  form(action=`/bicicletas/${bici.id}/update` method='post')
+  h1 Actualizando Bicicleta
+
+  br
+  br
+
+  form(action=`/bicicletas/${bici.id}/show` method='post')
     label(for="id") ID:
     input#id(type="text" name="id" value=bici.id)
     br
