@@ -10,8 +10,9 @@ block content
         th(scope='col') Color
         th(scope='col') Modelo
         th(scope='col') Ubicacion
-        th(scope='col')
-        th(scope='col')
+        th(scope='col') editar
+        th(scope='col') eliminar
+         th(scope='col') mostrar
     tbody
       each bici in bicis
         tr
@@ -27,4 +28,4 @@ block content
                 button.link-button(type='submit' name='submit_param' value='submit_value' class='btn')
                     = 'Eliminar'
           td
-            a(href='bicicletas/' + bici.id + '/show') Mostrar
+               a(href='bicicletas/' + bici.id + '/show')  Mostrar

@@ -7,26 +7,46 @@ block content
   br
   br
 
-  h1 Actualizando Bicicleta
+  h1 Detalle de una Bicicleta
 
   br
   br
 
   form(action=`/bicicletas/${bici.id}/show` method='post')
     label(for="id") ID:
-    input#id(type="text" name="id" value=bici.id)
+    input#id(type="text" name="id" value=bici.id readonly)
     br
     label(for="color") Color:
-    input#color(type="text" name="color" value=bici.color)
+    input#color(type="text" name="color" value=bici.color readonly)
     br
     label(for="modelo") Modelo:
-    input#modelo(type="text" name="modelo" value=bici.modelo)
+    input#modelo(type="text" name="modelo" value=bici.modelo readonly)
     br
     label(for="lat") Latitud:
-    input#modelo(type="text" name="lat" value=bici.ubicacion[0])
+    input#modelo(type="text" name="lat" value=bici.ubicacion[0] readonly)
     br
     label(for="lng") Longitud:
-    input#modelo(type="text" name="lng" value=bici.ubicacion[1])
-    br
-    br
-    input.btn(type='submit' value='OK')
+    input#modelo(type="text" name="lng" value=bici.ubicacion[1] readonly)
+  
+    .modal(tabindex='-1' role='dialog')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        h5.modal-title Detalle de Bicleta
+        button.close(type='button' data-dismiss='modal' aria-label='Close')
+          span(aria-hidden='true') &times;
+      .modal-body
+        
+
+         label(for="id") ID:
+         input#id(type="text" name="id" value=bici.id readonly)
+         br
+         label(for="color") Color:
+         input#color(type="text" name="color" value=bici.color readonly)
+         br
+        
+        
+              
+      .modal-footer
+        button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+        button.btn.btn-primary(type='button') Save changes

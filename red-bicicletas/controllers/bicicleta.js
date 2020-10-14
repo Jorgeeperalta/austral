@@ -31,14 +31,14 @@ exports.bicicleta_update_post = function(req, res){
 	bici.ubicacion = [req.body.lat, req.body.lng];
 
 	res.redirect('/bicicletas');
-	console.log('hola');
+
 }
 exports.bicicleta_show_get = function(req, res){
 	var bici = Bicicleta.findById(req.params.id);
 
 	res.render('bicicletas/show', {bici});
 
-	alert('hola')
+
 }
 exports.bicicleta_show_post = function(req, res){
 	var bici = Bicicleta.findById(req.params.id);
@@ -47,7 +47,7 @@ exports.bicicleta_show_post = function(req, res){
 	bici.modelo = req.body.modelo;
 	bici.ubicacion = [req.body.lat, req.body.lng];
 
-	res.redirect('/bicicletas/show');
+	res.redirect('/bicicletas');
 }
 
 exports.bicicletas_delete_post = function(req, res){
